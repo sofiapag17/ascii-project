@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Μάθημα ASCII + Quiz</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-image: url('wallpaper.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+  padding: 50px;
+}
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      max-width: 800px;
+      margin: auto;
+      text-align: justify;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 20px 0;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #6600FF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #99CCFF;
+    }
+   .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+   .button-row button {
+      flex: 1;
+      max-width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      color: black;
+      cursor: pointer;
+    }
+
+   .theory-btn {
+      background-color: #66FFCC; 
+    }
+
+   .theory-btn:hover {
+      background-color: #CC99FF;
+   }
+
+   .table-btn {
+      background-color: #66FFCC; 
+   }
+
+   .table-btn:hover {
+      background-color: #FF8A65;
+   }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+      max-width: 100%;
+    }
+    table, th, td {
+      border: 1px solid gray;
+      padding: 4px;
+      font-size: 12px;
+      word-wrap: break-word;
+      text-align: center;
+    }
+    td:hover {
+      background-color: #e0f7fa;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    .divider {
+      border: none;
+      height: 2px;
+      background-color: #9999FF;
+      margin: 40px 0;
+    }
+    #asciiInfo {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    th {
+     background-color: #CCCCFF;
+     color: black;
+     padding: 10px;
+     font-weight: bold;
+     text-align: center;
+    }
+    #afterQuizNav button {
+      margin-top: 10px;
+      width: 100%;
+    }
+    #theorySection {
+      max-width: 800px;
+      margin: auto;
+    }
+    #quizSection {
+      max-width: 800px;
+      margin: 100px auto 0 auto; 
+    }
+
+    }
+    #tableSection {
+       max-width: 100%; 
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Θεωρία ASCII -->
+  <div class="box" id="theorySection">
+    <h2>Ο Κώδικας ASCII</h2>
+    <hr class="divider">
+    <p>Ο κώδικας ASCII είναι ένα κωδικοποιημένο σύνολο χαρακτήρων του λατινικού αλφάβητου. Χρησιμοποιείται για αναπαράσταση κειμένου στους υπολογιστές. σε συσκευές τηλεπικοινωνίας, καθώς    	και σε άλλες συσκευές που δουλεύουν με κείμενο. Οι περισσότερες σύγχρονες κωδικοποιήσεις χαρακτήρων βασίζονται στον ASCII, αν και υποστηρίζουν πολύ περισσότερους χαρακτήρες.</p>
+    <p>Ιστορικά, ο ASCII αναπτύχθηκε από τηλεγραφικούς κώδικες. Η πρώτη εμπορική χρήση του ήταν ως κώδικας ενός τηλέτυπου επτά bit της Bell. Η δουλειά για τον ASCII ξεκίνησε επίσημα στις 6  	Οκτωβρίου 1940, με την πρώτη συνάντηση της υποεπιτροπής X3.2 του Αμερικανικού Οργανισμού Τυποποίησης. Η πρώτη έκδοση δημοσιεύτηκε το 1963, μία μείζων αναθεώρηση το 1967, και η 	πλέον πρόσφατη ενημέρωση το 1986. Σε σύγκριση με τους παλαιότερους τηλεγραφικούς κώδικες, ο προτεινόμενος κώδικας της Bell και ο ASCII ήταν διατεταγμένοι για πιο άνετη ταξινόμηση 	(π.χ. αλφαβητική σειρά) καταλόγων ενώ είχαν χαρακτηριστικά και για άλλες συσκευές εκτός από τηλέτυπα.</p>
+    <p>Ο ASCII περιλαμβάνει ορισμούς για 128 χαρακτήρες: 33 είναι μη εκτυπώσιμοι χαρακτήρες ελέγχου που επηρεάζουν το πως γίνεται οι επεξεργασία του κειμένου και των κενών, 94 είναι 	εκτυπώσιμοι χαρακτήρες, και το κενό που θεωρείται αόρατο γραφικό. Η πλέον κοινώς χρησιμοποιούμενη κωδικοποίηση χαρακτήρων στο διαδίκτυο ήταν η US-ASCII μέχρι τον Δεκέμβριο του 	2007, οπότε ξεπεράστηκε από την κωδικοποίηση UTF-8.</p>
+  
+    <hr class="divider">
+      <button onclick="showSection('tableSection')">Διαδραστικός Πίνακας</button>
+  </div>
+
+  <div class="box hidden" id="tableSection">
+    <h2>Πίνακας ASCII</h2>
+    <hr class="divider">
+    <p>Ο παρακάτω πίνακας περιέχει μερικούς απο τους βασικούς χαρακτήρες. Επίσης είναι διαδραστικός, δηλαδή πατώντας πάνω σε κάποιον χαρακτήρα εμφανίζεται και η ASCII μορφή του αλλά και η Δυαδική. </p>
+    <div style="overflow-x: auto;">
+      <table id="asciiTable">
+    <thead>
+      <tr>
+        <th class="header">BIN<br>b3-0</th>
+        <th class="header">H<br>b7-4</th>
+        <th class="header">0</th>
+        <th class="header">1</th>
+        <th class="header">2</th>
+        <th class="header">3</th>
+        <th class="header">4</th>
+        <th class="header">5</th>
+        <th class="header">6</th>
+        <th class="header">7</th>
+        <th class="header">8</th>
+        <th class="header">9</th>
+        <th class="header">a</th>
+        <th class="header">b</th>
+        <th class="header">c</th>
+        <th class="header">d</th>
+        <th class="header">e</th>
+        <th class="header">f</th>
+      </tr>
+    </thead>
+    <tbody id="asciiBody"></tbody>
+  </table>
+</div>
+  <br>
+  <div class="info-box" id="infoBox"></div>
+
+
+    <p id="asciiInfo"></p>
+    <hr class="divider">
+    <button onclick="startQuiz()">Ξεκίνα το Quiz</button>
+  </div>
+
+  <div class="box hidden" id="quizSection">
+    <h2 id="questionText"></h2>
+    <hr class="divider">
+    <p id="timer" style="font-weight:bold; color:#6600FF;"></p>
+    <div id="answerButtons"></div>
+    <p id="feedback"></p>
+    <button class="hidden" id="restartBtn" onclick="restartQuiz()">Επανεκκίνηση Quiz</button>
+
+<div id="afterQuizNav" class="hidden button-row">
+  <button class="theory-btn" onclick="showSection('theorySection')">Μετάβαση στη Θεωρία</button>
+  <button class="table-btn" onclick="showSection('tableSection')">Μετάβαση στον Πίνακα</button>
+</div>
+
+  </div> 
+
+  <script>
+    const controlChars = [
+      "NUL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL",
+      "BS", "HT", "LF", "VT", "FF", "CR", "SO", "SI",
+      "DLE", "DC1", "DC2", "DC3", "DC4", "NAK", "SYN", "ETB",
+      "CAN", "EM", "SUB", "ESC", "FS", "GS", "RS", "US"
+    ];
+
+    const asciiTable = document.getElementById("asciiBody");
+    const infoBox = document.getElementById("infoBox");
+
+    for (let row = 0; row < 8; row++) {
+      const tr = document.createElement("tr");
+      const bin = row.toString(2).padStart(4, '0');
+      tr.innerHTML = `<th class="header">${bin}</th><th class="header">${row}</th>`;
+
+      for (let col = 0; col < 16; col++) {
+        const code = row * 16 + col;
+        const hex = code.toString(16).padStart(2, '0');
+        const binFull = code.toString(2).padStart(8, '0');
+
+        let char = "";
+        let tdClass = "";
+
+        if (code < 32) {
+          char = controlChars[code];
+          tdClass = "ctrl";
+        } else if (code === 127) {
+          char = "DEL";
+          tdClass = "ctrl";
+        } else {
+          char = String.fromCharCode(code);
+          tdClass = "printable";
+        }
+
+        const td = document.createElement("td");
+        td.className = tdClass;
+        td.innerText = char;
+        td.title = `ASCII: ${code} | HEX: ${hex.toUpperCase()} | BIN: ${binFull}`;
+        td.addEventListener("click", () => {
+          infoBox.style.display = "block";
+          infoBox.innerText = `Χαρακτήρας: ${char} | Δεκαδικός: ${code} | Δεκαεξαδικός: ${hex.toUpperCase()} | Δυαδικός: ${binFull}`;
+        });
+        tr.appendChild(td);
+      }
+      asciiTable.appendChild(tr);
+    }
+    const questions = [
+      {
+        question: "Ποιος είναι ο ASCII κωδικός του γράμματος A;",
+        answers: ["64", "65", "66", "67"],
+        correct: 1
+      },
+      {
+        question: "Ποιος χαρακτήρας αντιστοιχεί στον ASCII κωδικό 66;",
+        answers: ["A", "B", "C", "D"],
+        correct: 1
+      },
+      {
+        question: "Ποιος είναι ο ASCII κωδικός του κενού (Space);",
+        answers: ["31", "33", "32", "35"],
+        correct: 2
+      },
+      {
+        question: "Ποιος χαρακτήρας έχει ASCII τιμή 97;",
+        answers: ["A", "Z", "a", "b"],
+        correct: 2
+      },
+      {
+        question: "Ποια είναι η δυαδική αναπαράσταση του ASCII 65;",
+        answers: ["01000001", "01100001", "01000010", "01000100"],
+        correct: 0
+      },
+      {
+        question: "Πόσοι συνολικά χαρακτήρες περιλαμβάνονται στον βασικό ASCII;",
+        answers: ["100", "94", "128", "256"],
+        correct: 2
+      },
+      {
+        question: "Ποιος χαρακτήρας αντιστοιχεί στον ASCII κωδικό 48;",
+        answers: ["A", "/", "0", "Space"],
+        correct: 2
+      },
+      {
+        question: "Ποιο είναι το εύρος των εκτυπώσιμων χαρακτήρων στον ASCII;",
+        answers: ["0–127", "32–126", "33–128", "1–94"],
+        correct: 1
+      },
+      {
+        question: "Ποια είναι η διαφορά μεταξύ του ASCII και του UTF-8;",
+        answers: [
+          "Το ASCII υποστηρίζει όλα τα αλφάβητα",
+          "Το UTF-8 βασίζεται στον ASCII και υποστηρίζει περισσότερους χαρακτήρες",
+          "Είναι το ίδιο",
+          "Το ASCII είναι για εικόνες"
+        ],
+        correct: 1
+      },
+      {
+        question: "Ποιος είναι ο ASCII κωδικός για τον χαρακτήρα ! ;",
+        answers: ["33", "34", "36", "64"],
+        correct: 0
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let wrongAnswers = [];
+
+    function showInfo(char, code) {
+      const binary = code.toString(2).padStart(8, '0');
+      document.getElementById("asciiInfo").textContent =
+        `Χαρακτήρας: ${char} | ASCII: ${code} | Δυαδικό: ${binary}`;
+    }
+
+    function startQuiz() {
+     showSection("quizSection");
+
+      currentQuestion = 0;
+      score = 0;
+      questions.sort(() => Math.random() - 0.5); // Ανακάτεμα ερωτήσεων
+      wrongAnswers = [];
+      document.getElementById("restartBtn").classList.add("hidden");
+      showQuestion();
+    }
+
+    let timerInterval;
+    let timeLeft = 10;
+
+    function startTimer() {
+      timeLeft = 10;
+      document.getElementById("timer").textContent = `Χρόνος: ${timeLeft}`;
+
+      timerInterval = setInterval(() => {
+      timeLeft--;
+      document.getElementById("timer").textContent = `Χρόνος: ${timeLeft}`;
+        if (timeLeft === 0) {
+         clearInterval(timerInterval);
+         checkAnswer(-1); // θεωρείται λάθος απάντηση αν δεν απαντηθεί εγκαίρως
+        }
+      }, 1000);
+     }
+
+    function stopTimer() {
+     clearInterval(timerInterval);
+    }
+
+
+    function showQuestion() {
+     stopTimer(); // σταματάει το προηγούμενο χρονόμετρο αν υπάρχει
+     startTimer(); // ξεκινά καινούριο
+
+     const q = questions[currentQuestion];
+     document.getElementById("questionText").innerHTML = `<span style="font-weight: normal;">Ερώτηση ${currentQuestion + 1} από ${questions.length}:</span><br><span style="font-size:    	20px;">${q.question}</span>`;
+     const answerButtons = document.getElementById("answerButtons");
+     answerButtons.innerHTML = "";
+
+     q.answers.forEach((answer, index) => {
+       const btn = document.createElement("button");
+       btn.textContent = answer;
+       btn.className = "quiz-option";
+       btn.onclick = () => checkAnswer(index);
+       answerButtons.appendChild(btn);
+      });
+
+     document.getElementById("feedback").textContent = "";
+    }
+
+
+    function checkAnswer(index) {
+      stopTimer(); // σταματά το χρονόμετρο όταν απαντηθεί ή λήξει ο χρόνος
+
+      const q = questions[currentQuestion];
+      const feedback = document.getElementById("feedback");
+
+      if (index === q.correct) {
+         score++;
+         feedback.textContent = "Σωστά!!!";
+         feedback.style.color = "green";
+      } else {
+         feedback.textContent = "Λάθος!";
+         feedback.style.color = "red";
+         wrongAnswers.push({
+         question: q.question,
+         correctAnswer: q.answers[q.correct]
+      });
+    }
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        setTimeout(showQuestion, 1000);
+     } else {
+        setTimeout(showResults, 1000);
+     }
+    }
+    function showResults() {
+      document.getElementById("questionText").textContent = "Τέλος Quiz!";
+      const answerButtons = document.getElementById("answerButtons");
+      const feedback = document.getElementById("feedback");
+
+      answerButtons.innerHTML = "";
+      feedback.innerHTML = "Το τελικό σου σκορ είναι: " + score + " στα " + questions.length;
+
+      if (wrongAnswers.length > 0) {
+        const mistakesList = document.createElement("ul");
+        wrongAnswers.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = `Ερώτηση: "${item.question}" — Σωστή απάντηση: "${item.correctAnswer}"`;
+          mistakesList.appendChild(li);
+        });
+        answerButtons.appendChild(mistakesList);
+        } else {
+        const congrats = document.createElement("p");
+        congrats.textContent = "Μπράβο! Απάντησες σωστά σε όλες τις ερωτήσεις!";
+        answerButtons.appendChild(congrats);
+        }
+
+       document.getElementById("restartBtn").classList.remove("hidden");
+       document.getElementById("afterQuizNav").classList.remove("hidden");
+
+
+      }
+    
+    function showSection(id) {
+       const sections = ["theorySection", "tableSection", "quizSection"];
+       sections.forEach(sec => {
+       document.getElementById(sec).classList.add("hidden");
+       });
+     document.getElementById(id).classList.remove("hidden");
+    }
+
+    function restartQuiz() {
+      startQuiz();
+    }
+  </script>
+</body>
+</html>
